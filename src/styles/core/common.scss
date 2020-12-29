@@ -11,14 +11,20 @@ body {
 html {
   scroll-behavior: smooth;
 }
+ul, ol, dl {
+  margin: 0;
+}
 li {
   list-style: none;
 }
 a {
   text-decoration: none;
 }
+p {
+  margin: 0;
+}
 body {
-  font-family: $josefin;
+  font-family: $oswald;
 }
 .container {
   margin: 0 auto;
@@ -26,15 +32,3 @@ body {
   max-width: 1170px;
   width: 100%;
 }
-// .primary-btn {
-  // @include flex(center, center);
-  // @include text($H60, 400, $white);
-  // font-family: $aleo;
-  // line-height: 1.63;
-  // letter-spacing: 1.2px;
-  // text-transform: uppercase;
-  // width: 225px;
-  // height: 60px;
-  // background: linear-gradient(50deg, #496bfe 40%, #5474fd 40%);
-  // position: relative;
-// }

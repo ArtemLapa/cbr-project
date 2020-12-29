@@ -1,4 +1,7 @@
+import 'ant-design-vue/dist/antd.css';
+import Antd from 'ant-design-vue';
 import './styles/style.scss';
+Vue.use(Antd);
 
 import Vue from 'vue';
 import App from './App.vue';

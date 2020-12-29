@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&family=Josefin+Sans:wght@400;700&display=swap');
-$josefin: 'Josefin Sans', sans-serif;
-$aleo: 'Aleo', serif;
-$main-color: #5474FD;
-$hover-btn: #496BFE;
-$white: #fff;
-$black: #000;
-$dark-grey: #333333;
-$light-grey: #E8E8E8;
-$placeholder-color: #999999;
-$card-bg: rgba(#232323, 0.9);
-$testimonials-color: #FEFEFE;
-$footer-bg: #232323;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+$oswald: 'Oswald', sans-serif;
+$white-10: #fff;
+$white-15: #f1f1f1;
+$white-20: #f7f8f3;
+$white-30: #eaedde;
+$brown-100: #1c200b;
+$blue-50: #abcbe2;
+$blue-100: #01183f;
+$green-10: #ced6af;
+$green-30: #aab384;
+$green-50: #9db892;
+$green-80: #6e774a;
+$black-100: #000000;
+$black-90: #1c1c1b;
 @function px_to_rem($target, $context: $base-size) {
   @if $target==0 {
     @return 0;
