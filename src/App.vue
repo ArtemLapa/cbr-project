@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
+  <div class="app">
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/> -->
     <the-header />
-    <the-about-us></the-about-us>
+    <the-about-us />
   </div>
 </template>
 
@@ -22,4 +22,8 @@ export default {
 }
 </script>
 
-    TheAboutUs
+<style lang="scss">
+  .app {
+    background-color: $white-20;
+  }
+</style>
