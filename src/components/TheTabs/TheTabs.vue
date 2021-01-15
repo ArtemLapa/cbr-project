@@ -28,10 +28,56 @@
         </div>
       </a-tab-pane>
       <a-tab-pane key="2" tab="benefits" force-render>
-        Content of Tab Pane 2
+        <div class="about-us__tabs-content">
+          <div class="about-us__tabs-content-text">
+            <h4 class="about-us__tabs-heading">
+              benefits
+            </h4>
+            <p class="about-us__tabs-text">
+              CBD is short for cannabidiol. It is a phytocannabinoid found in hemp and known for supporting the body and mind in many ways.* Charlotte’s Web products have cannabinoids with CBD extract.
+            </p>
+            <p class="about-us__tabs-text">
+              Not to be confused with oil from hemp seeds (which doesn’t contain cannabinoids), CBD comes from the flowers and leaves of the hemp plant.
+            </p>
+            <p class="about-us__tabs-text">
+              Why does CBD work? The human body has a vast network of receptors, the endocannabinoid system.
+            </p>
+          </div>
+          <div class="about-us__tabs-content-img">
+            <div class="about-us__img-wrapper">
+              <img src="https://picsum.photos/id/240/570/300" alt="image" class="about-us__img">
+            </div>
+            <div class="about-us__img-wrapper">
+              <img src="https://picsum.photos/id/241/570/300" alt="image" class="about-us__img">
+            </div>
+          </div>
+        </div>
       </a-tab-pane>
       <a-tab-pane key="3" tab="our difference">
-        Content of Tab Pane 3
+        <div class="about-us__tabs-content">
+          <div class="about-us__tabs-content-text">
+            <h4 class="about-us__tabs-heading">
+              our difference
+            </h4>
+            <p class="about-us__tabs-text">
+              CBD is short for cannabidiol. It is a phytocannabinoid found in hemp and known for supporting the body and mind in many ways.* Charlotte’s Web products have cannabinoids with CBD extract.
+            </p>
+            <p class="about-us__tabs-text">
+              Not to be confused with oil from hemp seeds (which doesn’t contain cannabinoids), CBD comes from the flowers and leaves of the hemp plant.
+            </p>
+            <p class="about-us__tabs-text">
+              Why does CBD work? The human body has a vast network of receptors, the endocannabinoid system.
+            </p>
+          </div>
+          <div class="about-us__tabs-content-img">
+            <div class="about-us__img-wrapper">
+              <img src="https://picsum.photos/id/242/570/300" alt="image" class="about-us__img">
+            </div>
+            <div class="about-us__img-wrapper">
+              <img src="https://picsum.photos/id/243/570/300" alt="image" class="about-us__img">
+            </div>
+          </div>
+        </div>
       </a-tab-pane>
     </a-tabs>
   </div>
@@ -72,6 +118,9 @@ export default {
   }
   .ant-tabs-bar {
     border-bottom: 2px solid $green-10;
+    flex-basis: 80%;
+    max-width: 80%;
+    margin: 0 0 80px 0;
   }
   $style: "about-us";
     .#{$style} {
@@ -101,6 +150,8 @@ export default {
       }
       &__img-wrapper {
         margin-bottom: 30px;
+        max-width: 570px;
+        max-height: 300px;
         &:last-child {
           margin-bottom: 0;
         }
