@@ -1,9 +1,7 @@
 <template>
   <div class="products">
     <h4 class="products__title">cbd featured products</h4>
-    <div class="products__carusel-wrapper">
       <the-product-card />
-    </div>
   </div>
 </template>
 

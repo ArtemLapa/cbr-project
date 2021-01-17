@@ -1,49 +1,57 @@
 <template>
-  <ul class="products__products-list">
-    <a-carousel
-      :after-change="onChange"
-      :dot-position="dotPosition"
-      :autoplay="play"
-      :speed="1000"
-      arrows
-      :slidesToShow="toShow"
-    >
-      <div
-        slot="prevArrow"
-        class="custom-slick-arrow"
-        style="left: 10px;zIndex: 1"
-      >
-      <a-icon type="left-circle" />
-    </div>
-      <li v-for="item in cardInfo" :key="item.cardId" class="products__item">
-        <div class="products__card-wrapper">
-          <div class="products__card-image-wrapper">
-            <div class="products__card-stars">
-              <a-icon type="star" />
-              <a-icon type="star" />
-              <a-icon type="star" />
-              <a-icon type="star" />
-              <a-icon type="star" />
+  <div class="products__carusel-wrapper">
+    <ul class="products__products-list">
+      <a-carousel arrows
+        :after-change="onChange"
+        :dots="false"
+        :dot-position="dotPosition"
+        :autoplay="play"
+        :speed="1000"
+        :slidesToShow="toShow" >
+        <li v-for="item in cardInfo" :key="item.cardId" class="products__item">
+          <div class="products__card-wrapper">
+            <div class="products__card-image-wrapper">
+              <div class="products__card-stars">
+                <icon-star />
+                <icon-star />
+                <icon-star />
+                <icon-star />
+                <icon-star />
+              </div>
+              <h5 class="products__card-title">{{ item.cardTitle }}</h5>
+              <img :src="require(`@/assets/${item.cardImage}.png`)" alt="product" class="products__product-image">
             </div>
-            <h5 class="products__card-title">{{ item.cardTitle }}</h5>
-            <img :src="require(`@/assets/${item.cardImage}.png`)" alt="product" class="products__product-image">
+            <div class="products__price-wrapper">
+              <span class="products__price">{{ item.cardPrice }}</span>
+              <a href="#" class="products__to-shop-link">shop</a>
+            </div>
           </div>
-          <div class="products__price-wrapper">
-            <span class="products__price">{{ item.cardPrice }}</span>
-            <a href="#" class="products__to-shop-link">shop</a>
-          </div>
+        </li>
+        <div slot="prevArrow" class="products__arrow products__arrow--prev" style="zIndex: 1" >
+          <icon-arrow-prev />
         </div>
-      </li>
-      <div slot="nextArrow" class="custom-slick-arrow" style="right: 10px">
-        <a-icon type="right-circle" />
-      </div>
-    </a-carousel>
-  </ul>
+        <div slot="nextArrow" class="products__arrow products__arrow--next">
+          <icon-arrow-next />
+        </div>
+      </a-carousel>
+    </ul>
+  </div>
 </template>
 
+
+
 <script>
+import IconStar from '@/components/icons/IconStar.vue';
+import IconArrowPrev from '@/components/icons/IconArrowPrev.vue';
+import IconArrowNext from '@/components/icons/IconArrowNext.vue';
+
 export default {
   name: 'TheProductCard',
+  components: {
+    IconStar,
+    IconArrowPrev,
+    IconArrowNext,
+  },
   data() {
     return {
       dotPosition: 'bottom',
@@ -100,6 +108,7 @@ export default {
 
 <style lang="scss">
   $style: "products";
+  $carousel: "ant-carousel";
     .#{$style} {
       &__products-list {
         @include flex(space-between, stretch);
@@ -117,6 +126,13 @@ export default {
       }
       &__card-stars {
         margin-bottom: 20px;
+      }
+      &__rate-icon {
+        fill: $green-80;
+        margin-right: 4px;
+        &:last-child {
+          margin-right: 0;
+        }
       }
       &__card-title {
         @include text($H80, 400, $black-90);
@@ -150,5 +166,36 @@ export default {
           margin-left: 20px;
         }
       }
+      &__arrow {
+        background-color: black;
+      }
+    }
+    .#{$carousel} {
+      .slick-prev,
+      .slick-next {
+        top: 100%;
+        margin-top: 0;
+        bottom: -80px;
+        svg {
+          fill: #6e774a;
+          width: 40px;
+          height: 20px;
+        }
+      }
+      .slick-prev {
+        left: 47%;
+        transform: translateX(-47%);
+        margin-top: 60px;
+        width: 40px;
+      }
+      .slick-next {
+        right: 47%;
+        transform: translateX(-47%);
+        margin-top: 60px;
+        widows: 40px;
+      }
+      // .slick-list {
+      //   margin-bottom: 60px;
+      // }
     }
 </style>
