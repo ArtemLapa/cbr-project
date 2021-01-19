@@ -18,7 +18,7 @@ export default {
 <style lang="scss">
   $style: "products";
     .#{$style} {
-      margin-bottom: 100px;
+      margin-bottom: 229px;
       &__title {
         @include text($H300, 400, $black-90);
         text-transform: uppercase;
