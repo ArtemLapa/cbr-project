@@ -12,7 +12,7 @@ export default {
   name: 'TheHeader',
   components: {
     TheNavbar,
-    TheIntro
+    TheIntro,
   },
 }
 </script>
@@ -21,6 +21,6 @@ export default {
   $style: "header";
   .#{$style} {
     height: 100vh;
-    background:url("../../assets/bg-intro.jpg") #496bfe no-repeat;
+    background: url("../../assets/bg-intro.jpg") #496bfe no-repeat;
   }
 </style>

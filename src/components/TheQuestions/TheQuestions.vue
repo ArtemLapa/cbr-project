@@ -3,6 +3,9 @@
     <h4 class="questions__heading">Frequently asked questions</h4>
     <div v-for="item in collapseText" :key="item.textId" class="questions__collapse-wrapper">
       <a-collapse accordion>
+        <template #expandIcon="props">
+          <a-icon type="plus" :rotate="props.isActive ? 45 : 0" />
+        </template>
         <a-collapse-panel :key="item.textId" :header="item.textHeader" class="questions__collapse-item">
           <p class="questions__text">{{ item.text }}</p>
         </a-collapse-panel>
@@ -12,6 +15,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'TheQuestions',
   data() {
@@ -46,6 +50,7 @@ export default {
 <style lang="scss">
   $style: "questions";
   .#{$style} {
+    margin-bottom: 150px;
     &__heading {
       @include text($H300, 400, $black-90);
       text-transform: uppercase;

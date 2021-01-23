@@ -12,11 +12,11 @@
           <div class="products__card-wrapper">
             <div class="products__card-image-wrapper">
               <div class="products__card-stars">
-                <icon-star />
-                <icon-star />
-                <icon-star />
-                <icon-star />
-                <icon-star />
+                <icon-star class="products__rate-icon" />
+                <icon-star class="products__rate-icon" />
+                <icon-star class="products__rate-icon" />
+                <icon-star class="products__rate-icon" />
+                <icon-star class="products__rate-icon" />
               </div>
               <h5 class="products__card-title">{{ item.cardTitle }}</h5>
               <img :src="require(`@/assets/${item.cardImage}.png`)" alt="product" class="products__product-image">
@@ -82,7 +82,7 @@ export default {
           cardImage: 'black-ice',
           cardPrice: '$49.99 usd',
         },
-      ]
+      ],
     }
   },
   methods: {
@@ -192,10 +192,7 @@ export default {
         right: 47%;
         transform: translateX(-47%);
         margin-top: 60px;
-        widows: 40px;
+        width: 40px;
       }
-      // .slick-list {
-      //   margin-bottom: 60px;
-      // }
     }
 </style>
