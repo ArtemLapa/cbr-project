@@ -1,27 +1,29 @@
 <template>
   <div class="testimonials">
     <ul class="testimonials__list">
+      <div class="testimonials__promo">CBD every day</div>
       <a-carousel
         arrows
         :after-change="onChange"
         :autoplay="play"
         :speed="1000"
-        :slidesToShow="toShow" >
-        <div slot="prevArrow" class="custom-slick-arrow-t"
-             style="left: 10px;zIndex: 1">
-          <a-icon type="left-circle" />
+        :slidesToShow="toShow"
+        :dots="false"
+        class="classs" >
+        <div slot="prevArrow" class="custom-slick-arrow-t testimonials__arrow-prev">
+          <x-icon icon=arrow-prev />
         </div>
-        <div slot="nextArrow" class="custom-slick-arrow-t" style="right: 10px">
-          <a-icon type="right-circle" />
+        <div slot="nextArrow" class="custom-slick-arrow-t testimonials__arrow-next">
+          <x-icon icon=arrow-next class="testimonials__next"/>
         </div>
         <li class="testimonials__item">
           <div class="testimonials__content-wrapper">
             <div class="testimonials__stars-wrapper">
-              <icon-star class="testimonials__rate"/>
-              <icon-star class="testimonials__rate"/>
-              <icon-star class="testimonials__rate"/>
-              <icon-star class="testimonials__rate"/>
-              <icon-star class="testimonials__rate"/>
+              <x-icon name=rate-star class="testimonials__rate" />
+              <x-icon name=rate-star class="testimonials__rate" />
+              <x-icon name=rate-star class="testimonials__rate" />
+              <x-icon name=rate-star class="testimonials__rate" />
+              <x-icon name=rate-star class="testimonials__rate" />
             </div>
             <p class="testimonials__text">
               I have tried another product after using this one successfully, and I
@@ -35,11 +37,11 @@
         <li class="testimonials__item">
           <div class="testimonials__content-wrapper">
             <div class="testimonials__stars-wrapper">
-              <icon-star class="testimonials__rate"/>
-              <icon-star class="testimonials__rate"/>
-              <icon-star class="testimonials__rate"/>
-              <icon-star class="testimonials__rate"/>
-              <icon-star class="testimonials__rate"/>
+              <x-icon name=rate-star class="testimonials__rate" />
+              <x-icon name=rate-star class="testimonials__rate" />
+              <x-icon name=rate-star class="testimonials__rate" />
+              <x-icon name=rate-star class="testimonials__rate" />
+              <x-icon name=rate-star class="testimonials__rate" />
             </div>
             <p class="testimonials__text">
               I have tried another product after using this one successfully, and I
@@ -56,12 +58,12 @@
 </template>
 
 <script>
-import IconStar from '@/components/icons/IconStar.vue';
+import XIcon from '@/components/common/XIcon.vue';
 
 export default {
   name: "TheTestimonials",
   components: {
-    IconStar,
+    XIcon,
   },
   data() {
     return {
@@ -73,15 +75,63 @@ export default {
     onChange(a, b, c) {
       a, b, c;
     },
-  }
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+  $style: "ant-carousel";
+  .#{$style} {
+    .slick-prev,
+    .slick-next {
+      width: 130px;
+      height: 100px;
+      margin-top: -100px;
+      top: 100%;
+      border: 1px solid $white-20;
+      z-index: 1;
+      svg {
+        fill: $white-10;
+      }
+    }
+    .slick-prev {
+      left: 47%;
+      transform: translateX(-47%);
+    }
+    .slick-next {
+      right: 39.9%;
+      transform: translateX(-39.9%);
+    }
+    .custom-slick-arrow-t {
+      @include flex(center, center);
+      display: flex !important;
+    }
+    .slick-dots-bottom {
+      display: none !important;
+    }
+  }
+</style>
 
 <style lang="scss">
   $style: "testimonials";
   .#{$style} {
+    margin-bottom: 175px;
+    &__list {
+      position: relative;
+    }
+    &__promo {
+      @include text($H80, 300, $white-20);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 15%;
+      left: -1%;
+      transform: rotateZ(90deg);
+      z-index: 1;
+    }
     &__item {
       @include flex(center, center);
+      display: flex !important;
       height: 800px;
       max-width: 100vw;
       position: relative;

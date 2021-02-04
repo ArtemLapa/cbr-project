@@ -12,11 +12,11 @@
           <div class="products__card-wrapper">
             <div class="products__card-image-wrapper">
               <div class="products__card-stars">
-                <icon-star class="products__rate-icon" />
-                <icon-star class="products__rate-icon" />
-                <icon-star class="products__rate-icon" />
-                <icon-star class="products__rate-icon" />
-                <icon-star class="products__rate-icon" />
+                <x-icon icon=rate-star class="products__rate-icon" />
+                <x-icon icon=rate-star class="products__rate-icon" />
+                <x-icon icon=rate-star class="products__rate-icon" />
+                <x-icon icon=rate-star class="products__rate-icon" />
+                <x-icon icon=rate-star class="products__rate-icon" />
               </div>
               <h5 class="products__card-title">{{ item.cardTitle }}</h5>
               <img :src="require(`@/assets/${item.cardImage}.png`)" alt="product" class="products__product-image">
@@ -28,10 +28,10 @@
           </div>
         </li>
         <div slot="prevArrow" class="products__arrow products__arrow--prev" style="zIndex: 1" >
-          <icon-arrow-prev />
+          <x-icon icon=arrow-prev />
         </div>
         <div slot="nextArrow" class="products__arrow products__arrow--next">
-          <icon-arrow-next />
+          <x-icon icon=arrow-next />
         </div>
       </a-carousel>
     </ul>
@@ -41,16 +41,12 @@
 
 
 <script>
-import IconStar from '@/components/icons/IconStar.vue';
-import IconArrowPrev from '@/components/icons/IconArrowPrev.vue';
-import IconArrowNext from '@/components/icons/IconArrowNext.vue';
+import XIcon from '@/components/common/XIcon.vue';
 
 export default {
   name: 'TheProductCard',
   components: {
-    IconStar,
-    IconArrowPrev,
-    IconArrowNext,
+    XIcon,
   },
   data() {
     return {
@@ -93,9 +89,33 @@ export default {
 }
 </script>
 
-<style scoped>
-  .ant-carousel {
+<style lang="scss" scoped>
+  $carousel: "ant-carousel";
+  .#{$carousel} {
     width: 100%;
+    .slick-prev,
+    .slick-next {
+      top: 100%;
+      margin-top: 0;
+      bottom: -80px;
+      svg {
+        fill: #6e774a;
+        width: 40px;
+        height: 20px;
+      }
+    }
+    .slick-prev {
+      left: 47%;
+      transform: translateX(-47%);
+      margin-top: 60px;
+      width: 40px;
+    }
+    .slick-next {
+      right: 47%;
+      transform: translateX(-47%);
+      margin-top: 58px;
+      width: 40px;
+    }
   }
   .ant-carousel >>> .slick-slide {
     text-align: center;
@@ -108,7 +128,6 @@ export default {
 
 <style lang="scss">
   $style: "products";
-  $carousel: "ant-carousel";
     .#{$style} {
       &__products-list {
         @include flex(space-between, stretch);
@@ -168,31 +187,6 @@ export default {
       }
       &__arrow {
         background-color: black;
-      }
-    }
-    .#{$carousel} {
-      .slick-prev,
-      .slick-next {
-        top: 100%;
-        margin-top: 0;
-        bottom: -80px;
-        svg {
-          fill: #6e774a;
-          width: 40px;
-          height: 20px;
-        }
-      }
-      .slick-prev {
-        left: 47%;
-        transform: translateX(-47%);
-        margin-top: 60px;
-        width: 40px;
-      }
-      .slick-next {
-        right: 47%;
-        transform: translateX(-47%);
-        margin-top: 60px;
-        width: 40px;
       }
     }
 </style>
