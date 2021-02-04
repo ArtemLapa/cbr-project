@@ -95,12 +95,12 @@ export default {
       }
     }
     .slick-prev {
-      left: 47%;
-      transform: translateX(-47%);
+      left: 43.4%;
+      // transform: translateX(-47%);
     }
     .slick-next {
-      right: 39.9%;
-      transform: translateX(-39.9%);
+      right: 43%;
+      // transform: translateX(-39.9%);
     }
     .custom-slick-arrow-t {
       @include flex(center, center);

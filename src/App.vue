@@ -10,6 +10,7 @@
     <the-products />
     <the-questions />
     <the-testimonials />
+    <the-footer />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import TheAboutUs from '@/components/TheAboutUs/TheAboutUs.vue';
 import TheProducts from '@/components/TheProducts/TheProducts.vue';
 import TheQuestions from '@/components/TheQuestions/TheQuestions.vue';
 import TheTestimonials from "@/components/TheTestimonials/TheTestimonials";
+import TheFooter from '@/components/TheFooter/TheFooter.vue';
 
 export default {
   name: 'App',
@@ -28,6 +30,7 @@ export default {
     TheProducts,
     TheQuestions,
     TheTestimonials,
+    TheFooter,
   },
 }
 </script>
