@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-    <the-navbar></the-navbar>
-    <the-intro></the-intro>
+    <the-navbar />
+    <the-intro />
   </div>
 </template>
 
